@@ -1,0 +1,7 @@
+{"level":"info","time":"2025-04-19T23:36:40.499+0800","line":"D:/4.work/2.code/pledge/pledge-backend/db/mysql.go:16","msg":"Init Mysql","serviceName":"pledge"}
+{"level":"info","time":"2025-04-19T23:36:40.535+0800","line":"D:/4.work/2.code/pledge/pledge-backend/db/redis.go:15","msg":"Init Redis","serviceName":"pledge"}
+{"level":"info","time":"2025-04-19T23:39:22.714+0800","line":"D:/4.work/2.code/pledge/pledge-backend/db/mysql.go:16","msg":"Init Mysql","serviceName":"pledge"}
+{"level":"info","time":"2025-04-19T23:39:22.734+0800","line":"D:/4.work/2.code/pledge/pledge-backend/db/redis.go:15","msg":"Init Redis","serviceName":"pledge"}
+{"level":"info","time":"2025-04-19T23:39:22.944+0800","line":"D:/4.work/2.code/pledge/pledge-backend/api/models/kucoin/kucoin.go:17","msg":"GetExchangePrice ","serviceName":"pledge"}
+{"level":"info","time":"2025-04-19T23:39:22.944+0800","line":"D:/4.work/2.code/pledge/pledge-backend/api/models/ws/ws.go:118","msg":"WsServer start","serviceName":"pledge"}
+{"level":"error","time":"2025-04-19T23:39:22.948+0800","line":"D:/4.work/2.code/pledge/pledge-backend/api/models/kucoin/kucoin.go:22","msg":"get plgr price from redis err redigo: nil returned","serviceName":"pledge"}
