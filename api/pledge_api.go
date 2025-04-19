@@ -1,6 +1,7 @@
 package main
 
 import (
+	"golang.org/x/time/rate"
 	"pledge-backend/api/middlewares"
 	"pledge-backend/api/models"
 	"pledge-backend/api/models/kucoin"
@@ -37,7 +38,7 @@ func main() {
 	app := gin.Default()
 	staticPath := static.GetCurrentAbPathByCaller()
 	app.Static("/storage/", staticPath)
-	app.Use(middlewares.Cors()) // 「 Cross domain Middleware 」
+	app.Use(middlewares.Cors(), middlewares.RateLimitMiddleware(rate.Limit(10), 50)) // 「 Cross domain Middleware 」
 	routes.InitRoute(app)
 	_ = app.Run(":" + config.Config.Env.Port)
 
