@@ -8,4 +8,6 @@ func InitTable() {
 	db.Mysql.AutoMigrate(&TokenList{})
 	db.Mysql.AutoMigrate(&PoolData{})
 	db.Mysql.AutoMigrate(&PoolBases{})
+	db.Mysql.AutoMigrate(&TxData{})
+	db.Mysql.AutoMigrate(&TxReceiptData{})
 }
