@@ -10,4 +10,5 @@ func InitTable() {
 	db.Mysql.AutoMigrate(&PoolBases{})
 	db.Mysql.AutoMigrate(&TxData{})
 	db.Mysql.AutoMigrate(&TxReceiptData{})
+	db.Mysql.AutoMigrate(&BlockData{})
 }

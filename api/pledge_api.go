@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
 	"golang.org/x/time/rate"
 	"pledge-backend/api/middlewares"
 	"pledge-backend/api/models"
@@ -11,12 +12,9 @@ import (
 	"pledge-backend/api/validate"
 	"pledge-backend/config"
 	"pledge-backend/db"
-
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
 	//init mysql
 	db.InitMysql()
 

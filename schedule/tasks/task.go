@@ -21,13 +21,16 @@ func Task() {
 	}
 
 	//init task
-	services.NewPool().UpdateAllPoolInfo()
-	services.NewTokenPrice().UpdateContractPrice()
-	services.NewTokenSymbol().UpdateContractSymbol()
-	services.NewTokenLogo().UpdateTokenLogo()
-	services.NewBalanceMonitor().Monitor()
+	//services.NewPool().UpdateAllPoolInfo()
+	//services.NewTokenPrice().UpdateContractPrice()
+	//services.NewTokenSymbol().UpdateContractSymbol()
+	//services.NewTokenLogo().UpdateTokenLogo()
+	//services.NewBalanceMonitor().Monitor()
 	// services.NewTokenPrice().SavePlgrPrice()
 	services.NewTokenPrice().SavePlgrPriceTestNet()
+	services.NewBlockService().UpdateHeadBlock()
+	services.NewBlockService().UpdateFinalizedBlock()
+	services.NewBlockService().UpdateSafeBlock()
 
 	//run pool task
 	s := gocron.NewScheduler()

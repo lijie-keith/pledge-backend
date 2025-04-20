@@ -101,6 +101,7 @@ func (s *txService) GetTxDataByTx(tx *types.Transaction, chainId int64) (*models
 	sender, err := types.LatestSignerForChainID(tx.ChainId()).Sender(tx)
 
 	if err != nil {
+		log.Logger.Error("Failed to query the from address:" + err.Error())
 		return nil, err
 	}
 	from = sender
