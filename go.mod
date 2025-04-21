@@ -18,6 +18,7 @@ require (
 	github.com/shopspring/decimal v1.3.1
 	go.uber.org/zap v1.21.0
 	golang.org/x/crypto v0.35.0
+	golang.org/x/time v0.9.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gorm.io/driver/mysql v1.3.2
 	gorm.io/gorm v1.23.1

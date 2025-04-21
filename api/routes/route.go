@@ -33,5 +33,13 @@ func InitRoute(e *gin.Engine) *gin.Engine {
 	v2Group.POST("/user/login", userController.Login)                             // login
 	v2Group.POST("/user/logout", middlewares.CheckToken(), userController.Logout) // logout
 
+	// tx
+	txController := controllers.TxController{}
+	v2Group.GET("/eth/tx/:txHash", txController.GetTx)
+	v2Group.GET("/eth/tx_receipt/:txHash", txController.GetTxReceipt)
+
+	// block
+	blockController := controllers.BlockController{}
+	v2Group.GET("/eth/block/:block_num", blockController.GetBlockInfo)
 	return e
 }

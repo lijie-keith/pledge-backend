@@ -20,6 +20,7 @@ const (
 
 	NameOrPasswordErr = 1303 //name or password error
 
+	TxHashEmptyErr = 1304
 )
 
 var Msg = map[int]map[int]string{
@@ -78,6 +79,11 @@ var Msg = map[int]map[int]string{
 		LangZh:   "用户名或密码错误",
 		LangZhTw: "用戶名或密碼錯誤",
 		LangEn:   "name or password error",
+	},
+	1304: {
+		LangZh:   "txHash 不能为空",
+		LangZhTw: "txHash 不能為空",
+		LangEn:   "txHash required",
 	},
 }
 

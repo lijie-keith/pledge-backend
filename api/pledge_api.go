@@ -1,6 +1,8 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
+	"golang.org/x/time/rate"
 	"pledge-backend/api/middlewares"
 	"pledge-backend/api/models"
 	"pledge-backend/api/models/kucoin"
@@ -10,12 +12,9 @@ import (
 	"pledge-backend/api/validate"
 	"pledge-backend/config"
 	"pledge-backend/db"
-
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
 	//init mysql
 	db.InitMysql()
 
@@ -37,7 +36,7 @@ func main() {
 	app := gin.Default()
 	staticPath := static.GetCurrentAbPathByCaller()
 	app.Static("/storage/", staticPath)
-	app.Use(middlewares.Cors()) // 「 Cross domain Middleware 」
+	app.Use(middlewares.Cors(), middlewares.RateLimitMiddleware(rate.Limit(10), 50)) // 「 Cross domain Middleware 」
 	routes.InitRoute(app)
 	_ = app.Run(":" + config.Config.Env.Port)
 
